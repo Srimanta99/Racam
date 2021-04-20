@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:background="@drawable/gradient_green_header">
+        <RelativeLayout
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent">
+            <ImageView
+
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/back"></ImageView>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/categoryname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/white"
+            android:text="@string/category_name"></TextView>
+        <!--   <ImageView
+               android:layout_width="@dimen/_18sdp"
+               android:layout_height="@dimen/_18sdp"
+               android:layout_centerVertical="true"
+               android:layout_margin="@dimen/_10sdp"
+               android:layout_alignParentRight="true"
+               android:background="@drawable/edit"></ImageView>-->
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_category_videpo"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_category"
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

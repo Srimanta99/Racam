@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="@dimen/_50sdp">
+    <TextView
+        android:id="@+id/tv_itemname"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:textSize="@dimen/_15sdp"
+        android:gravity="center_vertical"></TextView>
+
+</LinearLayout>

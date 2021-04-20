@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.videoplayscreen.VideoPlayActivity">
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:background="@drawable/gradient_green_header">
+        <RelativeLayout
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent">
+            <ImageView
+
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/back"></ImageView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/white"
+            android:text="@string/category_name"></TextView>
+        <!--   <ImageView
+               android:layout_width="@dimen/_18sdp"
+               android:layout_height="@dimen/_18sdp"
+               android:layout_centerVertical="true"
+               android:layout_margin="@dimen/_10sdp"
+               android:layout_alignParentRight="true"
+               android:background="@drawable/edit"></ImageView>-->
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <com.potyvideo.library.AndExoPlayerView
+        android:id="@+id/andExoPlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        app:andexo_aspect_ratio="aspect_16_9"
+        app:andexo_full_screen="true"
+        app:andexo_play_when_ready="true"
+        app:andexo_show_controller="true"
+        app:andexo_resize_mode="Fit" />
+
+    <TextView
+        android:id="@+id/video_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16sdp"></TextView>
+    <TextView
+        android:id="@+id/video_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+
+        android:textSize="@dimen/_14sdp"></TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/gray"></TextView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+                <ImageView
+                    android:id="@+id/imglike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/like"></ImageView>
+                <TextView
+                    android:id="@+id/like_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="1"
+                    android:paddingLeft="@dimen/_7sdp"
+                    android:textSize="@dimen/_15sdp"
+                    android:layout_toRightOf="@+id/imglike"></TextView>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_call"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/rectangle_rounded_green"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="अधिक जानकारी के लिए हमें कॉल करें"
+                android:textSize="@dimen/_17sdp"
+                android:layout_gravity="center_horizontal"
+                ></Button>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

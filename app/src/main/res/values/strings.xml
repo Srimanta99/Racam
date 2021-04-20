@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">RACAM</string>
+    <string name="home">हैम</string>
+    <string name="lateast_update">नवीनतम अद्यतन</string>
+    <string name="need_loan_for_farming">अपने खेती के लिए ऋण की आवश्यकता है?</string>
+    <string name="its_easy">इसका आसान और 100% सुरक्षित है</string>
+    <string name="credit_planning">कलॉन के लिए बताये</string>
+    <string name="logout">लॉग आउट</string>
+    <string name="about_us">हमारे बारे में </string>
+    <string name="feedback">प्रतिक्रया</string>
+    <string name="welcome_back">वापसी पर स्वागत है</string>
+    <string name="sign_in_to_your_account">अपने अकाउंट में साइन इन करें</string>
+    <string name="phone_no">फ़ोन नंबर</string>
+    <string name="signin">साइन इन करें</string>
+    <string name="donothaveaccount">कोई खाता नहीं है?</string>
+    <string name="register_now">अभी पंजीकरण करें</string>
+    <string name="create_account">खाता बनाएं</string>
+    <string name="register_with_us">हमारे साथ रजिस्टर करें</string>
+    <string name="enter_name">नाम दर्ज</string>
+    <string name="register">रजिस्टर करें</string>
+    <string name="already_have_account">क्या आपके पास पहले से एक खाता मौजूद है?</string>
+    <string name="login_now">अभी लॉगिन करें</string>
+    <string name="verify_now">अभी सत्यापित करें</string>
+    <string name="signinto_your_account">अपने अकाउंट में साइन इन करें</string>
+    <string name="entre_otp">ओटीपी दर्ज करें</string>
+    <string name="verify">सत्यापित करें</string>
+    <string name="resend_otp">आप 15 सेकंड में otp को फिर से भेज सकते हैं</string>
+    <string name="latest_update">नवीनतम अद्यतन</string>
+    <string name="setpassword">पासवर्ड सेट करें</string>
+    <string name="enter_your_valueable_feedback">अपनी बहुमूल्य प्रतिक्रिया दर्ज करें</string>
+    <string name="submit">प्रस्तुत</string>
+    <string name="update_email">ईमेल अपडेट करें</string>
+    <string name="update_address">अद्यतन पता</string>
+    <string name="term_condition">नियम एवं शर्ते </string>
+    <string name="need_loan">क्या आपको ऋण की आवश्यकता है ?
+            यह आसान और 100% सुरक्षित है</string>
+    <string name="itseasy">इसका आसान और 100% सुरक्षित है</string>
+    <string name="category_name">श्रेणी नाम</string>
+</resources>

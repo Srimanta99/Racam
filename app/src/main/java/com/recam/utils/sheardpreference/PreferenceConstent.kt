@@ -1,0 +1,35 @@
+package com.wecompli.utils.sheardpreference
+
+object PreferenceConstent {
+
+     val language="hindi"
+    // var selecttab: String="selecttab"
+    var chk_selectiondate="checkselctiondate"
+    var Show_fragment_servicing = "Show_fragment_servicing"
+    var iS_LOGIN = "islogin"
+    var useremail_key = "loginusername"
+    var password_key = "password"
+    var isremember="isremenber"
+    var userData="userdata"
+    var siteDetails="SiteDetails"
+    var selectedUser="selecteduserfromlist"
+    var iS_Checked_login = "checklogin"
+    var loginuser_data = "userdata"
+    var loginuser_name = "username"
+    var loginuser_id = "userid"
+    var loginuser_token="token"
+    var site_id = "siteid"
+    var park_id = "parkid"
+    var selected_site_id="selectedsiteid"
+    var selected_sitename="selectedsitename"
+    var selected_packageid="packageid"
+    var login_phone="phone"
+    var  otp="otp"
+    var categoryId="categoryid"
+    var categoryname="categoryname"
+    var videoTitle="videoTitle"
+    var videourl="videourl"
+    var videodese="description"
+    var like="like"
+
+}

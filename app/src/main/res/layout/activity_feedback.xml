@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.profile.ProfileActivity">
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:background="@drawable/gradient_green_header">
+        <RelativeLayout
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent">
+            <ImageView
+
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/back"></ImageView>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/white"
+            android:text="@string/feedback"></TextView>
+     <!--   <ImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/edit"></ImageView>-->
+
+    </RelativeLayout>
+
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="हमें लिखें"
+    android:textSize="@dimen/_17sdp"
+    android:textColor="@color/black"
+    android:layout_margin="@dimen/_15sdp"
+    android:gravity="center_horizontal"></TextView>
+    <EditText
+        android:id="@+id/et_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_165sdp"
+        android:layout_margin="@dimen/_15sdp"
+        android:padding="@dimen/_10sdp"
+        android:hint="@string/enter_your_valueable_feedback"
+        android:gravity="top"
+        android:background="@drawable/rectangle_rounded_grey_broder_white"></EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:background="@drawable/sep"></TextView>
+    <Button
+        android:id="@+id/btn_feedback"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/_15sdp"
+        android:textSize="@dimen/_15sdp"
+        android:text="@string/submit"
+        android:background="@drawable/rectangle_rounded_green"></Button>
+</LinearLayout>
