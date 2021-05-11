@@ -13,6 +13,7 @@
         android:gravity="center_vertical"
         android:textSize="@dimen/_16sdp"
         android:layout_margin="@dimen/_7sdp"
+        android:paddingLeft="@dimen/_5sdp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Category Name"></TextView>
@@ -27,8 +28,10 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_1sdp"
-        android:background="@color/cardview_dark_background"></TextView>
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="#cacfcc"></TextView>
     <!-- <ImageView
          android:id="@+id/cat_image"
          android:layout_width="match_parent"

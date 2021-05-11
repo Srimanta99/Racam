@@ -32,9 +32,9 @@ class HomeCategoryVideoAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         itemView!!.itemname.setText(videos.get(position).video_description)
 
-        val aUrl: String = videos.get(position).video_url.replace("http", "https")
+      //  val aUrl: String = videos.get(position).video_url.replace("http", "https")
         Glide.with(activity)
-            .load(aUrl)
+            .load(videos.get(position).video_url)
             .placeholder(R.drawable.ic_placeholder)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
             .into(itemView!!.catImage);

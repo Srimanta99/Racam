@@ -37,9 +37,9 @@ class CategoryVideoListAdapter(
             onitemClickInterface.ItemClick(position)
         }
 
-        val aUrl: String = videolist.get(position).video_url.replace("http", "https")
+        //val aUrl: String = videolist.get(position).video_url.replace("http", "https")
         Glide.with(activity)
-            .load(aUrl)
+            .load(videolist.get(position).video_url)
             .placeholder(R.drawable.ic_placeholder)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
             .into(itemView!!.catImage);

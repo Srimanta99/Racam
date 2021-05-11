@@ -72,7 +72,7 @@
                     android:textSize="@dimen/_15sdp"
                     android:gravity="center_vertical"
                     android:layout_marginLeft="@dimen/_20sdp"
-                    android:text="@string/credit_planning"></TextView>
+                    android:text="लॉन के लिए बताये"></TextView>
             </LinearLayout>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_category"

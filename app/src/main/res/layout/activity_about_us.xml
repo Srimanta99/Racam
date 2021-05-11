@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".screens.termcondition.TermConditionActivity">
+
     <RelativeLayout
         android:id="@+id/rl_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_55sdp"
         android:background="@drawable/gradient_green_header">
+
         <RelativeLayout
             android:id="@+id/img_back"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="match_parent">
+
             <ImageView
 
                 android:layout_width="@dimen/_12sdp"
@@ -23,13 +26,14 @@
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:background="@drawable/back"></ImageView>
         </RelativeLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textSize="@dimen/_18sdp"
+            android:text="हम कौन हैं"
             android:textColor="@color/white"
-            android:text="हम कौन हैं"></TextView>
+            android:textSize="@dimen/_18sdp"></TextView>
         <!--   <ImageView
                android:layout_width="@dimen/_18sdp"
                android:layout_height="@dimen/_18sdp"
@@ -39,15 +43,60 @@
                android:background="@drawable/edit"></ImageView>-->
 
     </RelativeLayout>
-    <TextView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_15sdp"
-        android:text="प्रदान 1983 में दो युवा पेशेवरों/प्रोफेशनल, दीप जोशी और विजय महाजन द्वारा बनाया गया था, जिन्हें इस बात का यकीन था कि ग्रामीण भारत की  गरीबी को भी हल किया जा सकता है। उनका मानना था कि समुदायों के भीतर काम करने वाले अच्छी तरह से शिक्षित पेशेवर गरीब लोगों को उनके जीवन को बेहतर बनाने में मदद करने के लिए आवश्यक सहानुभूति और ज्ञान के साथ उनके क्षमता को बढाने के लिए कार्य करना होगा.
-मिशन
-प्रदान का दृष्टिकोण एक न्यायपूर्ण और न्यायसंगत समाज का निर्माण करना है जहां हर कोई सम्मान के साथ रहता है और काम करता है।
-हमारा मिशन सबसे अधिक उपेक्षित रहने वाले गरीब लोगों, विशेष रूप से ग्रामीण महिलाओं को एक सभ्य जीवन यापन करने और उन्हें खुद का जीवन संभालने में सक्षम बनाना है।
-हमें विश्वास है कि सभी लोग, चाहे वे कितने ही गरीब क्यों न हों, वे उस परिवर्तन को चलाने में सक्षम हैं जिसकी उन्हें आवश्यकता/चाहत है।
-"
-        android:layout_margin="@dimen/_12sdp"></TextView>
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="@dimen/_5sdp"
+                android:text="हम कौन हैं"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="प्रदान 1983 में दो युवा पेशेवरों/प्रोफेशनल, दीप जोशी और विजय महाजन द्वारा बनाया गया था, जिन्हें इस बात का यकीन था कि ग्रामीण भारत की  गरीबी को भी हल किया जा सकता है। उनका मानना ​​था कि समुदायों के भीतर काम करने वाले अच्छी तरह से शिक्षित पेशेवर गरीब लोगों को उनके जीवन को बेहतर बनाने में मदद करने के लिए आवश्यक सहानुभूति और ज्ञान के साथ उनके क्षमता को बढाने के लिए कार्य करना होगा."
+                android:textSize="@dimen/_15sdp"></TextView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/about_us"></ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="@dimen/_5sdp"
+                android:text="मिशन"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:text="प्रदान का दृष्टिकोण एक न्यायपूर्ण और न्यायसंगत समाज का निर्माण करना है जहां हर कोई
+सम्मान के साथ रहता है और काम करता है।
+हमारा मिशन सबसे अधिक उपेक्षित रहने वाले गरीब लोगों, विशेष रूप से ग्रामीण महिलाओं को
+एक सभ्य जीवन यापन करने और उन्हें खुद का जीवन संभालने में सक्षम बनाना है।
+
+हमें विश्वास है कि सभी लोग, चाहे वे कितने ही गरीब क्यों न हों, वे उस परिवर्तन को चलाने में
+सक्षम हैं जिसकी उन्हें आवश्यकता/चाहत है।"
+                android:textSize="@dimen/_15sdp"></TextView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

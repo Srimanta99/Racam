@@ -10,8 +10,8 @@ class AboutUsActivity : AppCompatActivity() {
     var activityAboutUsBinding:ActivityAboutUsBinding?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_about_us)
         activityAboutUsBinding= ActivityAboutUsBinding.inflate(LayoutInflater.from(this))
+        setContentView(activityAboutUsBinding!!.root)
         activityAboutUsBinding!!.imgBack.setOnClickListener {
             finish()
         }

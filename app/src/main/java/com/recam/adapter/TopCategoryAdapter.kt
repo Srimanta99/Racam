@@ -32,10 +32,10 @@ class TopCategoryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         itemView!!.itemname.setText(latestUpdate.get(position).video_title)
-        val aUrl: String = latestUpdate.get(position).video_url.replace("http", "https")
+     //   val aUrl: String = latestUpdate.get(position).video_url.replace("http", "https")
 
         Glide.with(activity)
-            .load(aUrl)
+            .load(latestUpdate.get(position).video_url)
             .placeholder(R.drawable.ic_placeholder)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
             .into(itemView!!.catImage);

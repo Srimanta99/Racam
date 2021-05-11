@@ -29,7 +29,7 @@
             android:layout_centerInParent="true"
             android:textSize="@dimen/_18sdp"
             android:textColor="@color/white"
-            android:text="@string/credit_planning"></TextView>
+            android:text="लॉन के लिए बताये"></TextView>
         <!--   <ImageView
                android:layout_width="@dimen/_18sdp"
                android:layout_height="@dimen/_18sdp"
@@ -39,4 +39,168 @@
                android:background="@drawable/edit"></ImageView>-->
 
     </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:paddingLeft="@dimen/_5sdp"
+                android:text="अपना विवरण दर्ज करें"></TextView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_12sdp">
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+
+                    android:layout_gravity="center_horizontal"
+
+                    android:hint="पीजी / एसएचजी दर्ज करें"
+                    android:textColor="@color/black"
+                    android:drawableRight="@drawable/down_arrow"
+                    android:drawablePadding="@dimen/_7sdp"
+                    android:padding="@dimen/_8sdp"
+                    android:background="@drawable/rectangle_rounded_login"></Spinner>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/down_arrow"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:layout_alignParentRight="true"></ImageView>
+            </RelativeLayout>
+               <EditText
+                android:id="@+id/et_block"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="प्रखंड/तहसील का नाम दर्ज करें"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_8sdp"
+
+                android:background="@drawable/rectangle_rounded_login"></EditText>
+            <EditText
+                android:id="@+id/et_panchyat"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="पंचायत का नाम दर्ज करें"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_8sdp"
+
+                android:background="@drawable/rectangle_rounded_login"></EditText>
+            <EditText
+                android:id="@+id/et_village"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="ग्राम  का नाम दर्ज करें"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_8sdp"
+
+                android:background="@drawable/rectangle_rounded_login"></EditText>
+
+            <EditText
+                android:id="@+id/et_pgsg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:hint="Pg / sg का चयन करें"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                android:padding="@dimen/_8sdp"
+
+                android:background="@drawable/rectangle_rounded_login"></EditText>
+
+
+            <EditText
+                android:id="@+id/et_pno"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="पफोन नंबर दर्ज करें"
+                android:textColor="@color/black"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_15sdp"
+                android:inputType="numberDecimal"
+                android:background="@drawable/rectangle_rounded_login"></EditText>
+
+            <EditText
+                android:id="@+id/et_fname"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="फ्रिस्ट नाम दर्ज करें"
+                android:textColor="@color/black"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_15sdp"
+                android:background="@drawable/rectangle_rounded_login"></EditText>
+
+            <EditText
+                android:id="@+id/et_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="अंतिम नाम दर्ज करें"
+                android:textColor="@color/black"
+                android:padding="@dimen/_8sdp"
+
+                android:textSize="@dimen/_15sdp"
+                android:background="@drawable/rectangle_rounded_login"></EditText>
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:hint="उम्र दर्ज करेंं"
+                android:textColor="@color/black"
+                android:padding="@dimen/_8sdp"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/_15sdp"
+                android:background="@drawable/rectangle_rounded_login"></TextView>
+
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/rectangle_rounded_green"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:text="अगला"
+                android:textSize="@dimen/_17sdp"
+                android:layout_gravity="center_horizontal"
+                ></Button>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

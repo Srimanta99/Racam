@@ -31,5 +31,11 @@ object PreferenceConstent {
     var videourl="videourl"
     var videodese="description"
     var like="like"
+    var view="view"
+    val videoId="videoid"
+    val emi="emi"
+    val interestrate="interestrate"
+    val year="year"
+    val interval="interval"
 
 }

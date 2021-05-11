@@ -42,6 +42,37 @@ interface ApiInterface {
     fun callHomeApi(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<HomeApiResponse>
 
 
+    @FormUrlEncoded
+    @POST(NetworkUtility.VIDEOLIKE)
+    fun callVideoLIkeApi(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<VideoLikeResponse>
+
+
+    @FormUrlEncoded
+    @POST(NetworkUtility.VIDEOVIEW)
+    fun callVideoViewApi(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<VideoLikeResponse>
+
+    @FormUrlEncoded
+    @POST(NetworkUtility.LOANCATEGORY)
+    fun callloancategoryApi(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<LoanCategoryApiResponse>
+
+    @POST(NetworkUtility.DISTRICT)
+    fun  calldistrictApi(@Header("Authorization") header:String): Call<DistrictApiresponseModel>
+
+
+    @FormUrlEncoded
+    @POST(NetworkUtility.LOANAPPLICATION)
+    fun callloanApplicationApi(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<LoanRegisterApiResponse>
+
+
+    @FormUrlEncoded
+    @POST(NetworkUtility.LOANEMI)
+    fun callloanApploanemi(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<LoanEmiApiResponse>
+
+    @FormUrlEncoded
+    @POST(NetworkUtility.LOANUPDATE)
+    fun callApiloanUpdate(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<ResponseBody>
+
+
     /*@POST(NetworkUtility.LOGIN)
     fun callLogInApi(@Body body: JsonObject): Call<LoginResponseModel>
 

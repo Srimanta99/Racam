@@ -10,10 +10,10 @@ class TermConditionActivity : AppCompatActivity() {
     var activityTermConditionBinding:ActivityTermConditionBinding?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_term_condition)
         activityTermConditionBinding= ActivityTermConditionBinding.inflate(LayoutInflater.from(this))
+        setContentView(activityTermConditionBinding!!.root)
         activityTermConditionBinding!!.imgBack.setOnClickListener {
-
+              finish()
         }
     }
 }

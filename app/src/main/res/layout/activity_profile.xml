@@ -30,7 +30,7 @@
             android:layout_centerInParent="true"
             android:textSize="@dimen/_18sdp"
             android:textColor="@color/white"
-            android:text="@string/home"></TextView>
+            android:text="प्रोफ़ाइल"></TextView>
         <ImageView
             android:id="@+id/img_edit"
             android:layout_width="@dimen/_18sdp"
@@ -109,11 +109,13 @@
         android:layout_marginRight="@dimen/_15sdp"
     android:background="@drawable/sep"></TextView>
     <Button
+        android:id="@+id/btn_setpassword"
         android:layout_width="@dimen/_220sdp"
         android:layout_height="@dimen/_45sdp"
         android:layout_gravity="center_horizontal"
         android:layout_margin="@dimen/_15sdp"
         android:text="@string/setpassword"
+        android:textSize="@dimen/_16sdp"
         android:background="@drawable/rectangle_rounded_green"></Button>
         </LinearLayout>
     </ScrollView>

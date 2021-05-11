@@ -66,11 +66,13 @@ class CategoryVideoList: AppCompatActivity(){
                             object : OnitemClickInterface { override fun ItemClick(position: Int) {
                                 super.ItemClick(position)
                                 var categoryVideoAetivity = Intent(this@CategoryVideoList, VideoPlayActivity::class.java)
+                                categoryVideoAetivity.putExtra(PreferenceConstent.videoId,categoryvideolist!!.get(position).id.toString())
                                 categoryVideoAetivity.putExtra(PreferenceConstent.videoTitle, categoryvideolist!!.get(position).video_title)
                                 categoryVideoAetivity.putExtra(PreferenceConstent.videourl, categoryvideolist!!.get(position).video_url)
                                 categoryVideoAetivity.putExtra(PreferenceConstent.categoryname, categoryvideolist!!.get(position).category)
                                 categoryVideoAetivity.putExtra(PreferenceConstent.videodese, categoryvideolist!!.get(position).video_description)
-                                categoryVideoAetivity.putExtra(PreferenceConstent.like, categoryvideolist!!.get(position).likes.toString())
+                               // categoryVideoAetivity.putExtra(PreferenceConstent.like, categoryvideolist!!.get(position).likes.toString())
+                               // categoryVideoAetivity.putExtra(PreferenceConstent.view, categoryvideolist!!.get(position).views.toString())
                                 startActivity(categoryVideoAetivity)
 
                             }

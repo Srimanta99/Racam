@@ -157,11 +157,13 @@ class HomeActivity : AppCompatActivity() {
                                 super.ItemClick(position)
 
                                 var categoryVideoAetivity = Intent(this@HomeActivity, VideoPlayActivity::class.java)
+                                categoryVideoAetivity.putExtra(PreferenceConstent.videoId, response!!.body()!!.data.latest_update.get(position).id.toString())
                                 categoryVideoAetivity.putExtra(PreferenceConstent.categoryname, response!!.body()!!.data.latest_update.get(position).category)
                                 categoryVideoAetivity.putExtra(PreferenceConstent.videodese, response!!.body()!!.data.latest_update.get(position).video_description)
                                 categoryVideoAetivity.putExtra(PreferenceConstent.videoTitle, response!!.body()!!.data.latest_update.get(position).video_title)
                                 categoryVideoAetivity.putExtra(PreferenceConstent.videourl, response!!.body()!!.data.latest_update.get(position).video_url)
-                                categoryVideoAetivity.putExtra(PreferenceConstent.like,response!!.body()!!.data.latest_update.get(position).likes.toString())
+                               // categoryVideoAetivity.putExtra(PreferenceConstent.like,response!!.body()!!.data.latest_update.get(position).likes.toString())
+                               // categoryVideoAetivity.putExtra(PreferenceConstent.view, response!!.body()!!.data.latest_update.get(position).views.toString())
                                 startActivity(categoryVideoAetivity)
                             }
                         })
@@ -199,12 +201,15 @@ class HomeActivity : AppCompatActivity() {
                 super.ItemClick(position)
 
                 var categoryVideoAetivity = Intent(this@HomeActivity, VideoPlayActivity::class.java)
+                categoryVideoAetivity.putExtra(PreferenceConstent.videoId, catgoryresponse.videos.get(position).id.toString())
                 categoryVideoAetivity.putExtra(PreferenceConstent.categoryname, catgoryresponse.videos.get(position).category)
                 categoryVideoAetivity.putExtra(PreferenceConstent.videodese, catgoryresponse.videos.get(position).video_description)
 
                 categoryVideoAetivity.putExtra(PreferenceConstent.videoTitle, catgoryresponse.videos.get(position).video_title)
                 categoryVideoAetivity.putExtra(PreferenceConstent.videourl, catgoryresponse.videos.get(position).video_url)
-                categoryVideoAetivity.putExtra(PreferenceConstent.like, catgoryresponse.videos.get(position).likes.toString())
+              //  categoryVideoAetivity.putExtra(PreferenceConstent.like, catgoryresponse.videos.get(position).likes.toString())
+               // categoryVideoAetivity.putExtra(PreferenceConstent.view, catgoryresponse.videos.get(position).views.toString())
+
                 startActivity(categoryVideoAetivity)
             }
         })

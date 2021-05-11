@@ -46,8 +46,9 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:layout_margin="@dimen/_7sdp"
+        android:paddingLeft="@dimen/_5sdp"
         android:textSize="@dimen/_17sdp"
-        android:text="नवीनतम अद्यतन"></TextView>
+        android:text="अद्यतन सूचनाएँ"></TextView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_topcategory"
         android:layout_width="match_parent"
@@ -60,7 +61,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_180sdp"
-        android:layout_margin="@dimen/_12sdp"
+        android:layout_margin="@dimen/_13sdp"
         android:orientation="vertical"
 
         android:background="@drawable/content_bg">

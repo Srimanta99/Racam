@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.creditplanning.CreditCalculatorForActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:background="@drawable/gradient_green_header">
+        <RelativeLayout
+            android:id="@+id/img_back"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent">
+            <ImageView
+
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/back"></ImageView>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/white"
+            android:text="क्रेडिट कैलकुलेटर"></TextView>
+        <!--   <ImageView
+               android:layout_width="@dimen/_18sdp"
+               android:layout_height="@dimen/_18sdp"
+               android:layout_centerVertical="true"
+               android:layout_margin="@dimen/_10sdp"
+               android:layout_alignParentRight="true"
+               android:background="@drawable/edit"></ImageView>-->
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingLeft="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:text="कके लिए ऋण आवश्यक है"></TextView>
+    <RelativeLayout
+        android:id="@+id/et_distname"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:textSize="@dimen/_16sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:hint="अपने विकल्प का चयन करें"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+
+
+
+        android:background="@drawable/rectangle_rounded_login">
+        <Spinner
+            android:id="@+id/spinner_loan_required"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></Spinner>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@drawable/rectangle_rounded_green"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:text="अगला"
+        android:textSize="@dimen/_17sdp"
+        android:layout_gravity="center_horizontal"
+        ></Button>
+
+</LinearLayout>
