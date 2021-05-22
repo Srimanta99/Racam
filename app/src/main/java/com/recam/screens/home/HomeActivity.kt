@@ -83,6 +83,9 @@ class HomeActivity : AppCompatActivity() {
         activityMainBinding!!.llCreditPlanningt.setOnClickListener {
             startActivity(Intent(this, CreditPlanningActivity::class.java))
         }
+        activityMainBinding!!.contentMain.loan.setOnClickListener {
+            startActivity(Intent(this, CreditPlanningActivity::class.java))
+        }
 
 
        /* activityMainBinding!!.contentMain.recBottomcategory!!.setLayoutManager(LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));

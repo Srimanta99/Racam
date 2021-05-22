@@ -29,6 +29,8 @@ class CreditCalculatorForActivity : AppCompatActivity() {
     var loancatList:ArrayList<LoanCategoryApiResponse.LoanData>?= ArrayList()
     var loanData:LoanCategoryApiResponse.LoanData?=null
     var pagecount:Int=1
+    var vagetable=0
+    var Orchard=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityCreditCalculatorForBinding= ActivityCreditCalculatorForBinding.inflate(LayoutInflater.from(this))
@@ -66,6 +68,8 @@ class CreditCalculatorForActivity : AppCompatActivity() {
             if (!cat_id.equals("0")) {
                 pagecount++
                 callLoanCategoryApi(cat_id)
+            }else if(vagetable==1){
+
             }
             else
                 Toast.makeText(this@CreditCalculatorForActivity,"अपना विकल्प चुनें",Toast.LENGTH_LONG).show()
@@ -85,19 +89,27 @@ class CreditCalculatorForActivity : AppCompatActivity() {
                 customProgress.hideProgress()
                 if (response.isSuccessful) {
                     if (response.body()!!.status == 200) {
+                            vagetable=response.body()!!.Vegetable
+                            Orchard=response.body()!!.Orchard
+                        if(vagetable==1 || vagetable==1){
+                            AppSheardPreference(this@CreditCalculatorForActivity).setvalue_in_preference(PreferenceConstent.selectedVagetablecat,cat_id)
+                            startActivity(Intent(this@CreditCalculatorForActivity, CreditCalculatorLandActivity::class.java))
+                        }else {
                             loancatList!!.clear()
                             loancatList!!.add(loanData!!)
-                           for (i in 0 until response!!.body()!!.data.size){
-                               loancatList!!.add(response!!.body()!!.data.get(i))
-                           }
-                            customSpinnerAdapter= CustomSpinnerAdapterLoanCategory(this@CreditCalculatorForActivity,R.layout.item_credit,loancatList!!)
-                           activityCreditCalculatorForBinding!!.spinnerLoadCat.adapter=customSpinnerAdapter;
+
+                            for (i in 0 until response!!.body()!!.data.size) {
+                                loancatList!!.add(response!!.body()!!.data.get(i))
+                            }
+                            customSpinnerAdapter = CustomSpinnerAdapterLoanCategory(this@CreditCalculatorForActivity, R.layout.item_credit, loancatList!!)
+                            activityCreditCalculatorForBinding!!.spinnerLoadCat.adapter = customSpinnerAdapter;
+                        }
                     }
                     //else
                        //Toast.makeText(this@CreditCalculatorForActivity, response!!.body()!!.message, Toast.LENGTH_LONG).show()
 
                 }else
-                  startActivity(Intent(this@CreditCalculatorForActivity,CreditCalculatorLandActivity::class.java))
+                  startActivity(Intent(this@CreditCalculatorForActivity,TotalLoanActivity::class.java))
                 //else
                     //Toast.makeText(this@CreditCalculatorForActivity, "Something wrong. Try later", Toast.LENGTH_LONG).show()
             }

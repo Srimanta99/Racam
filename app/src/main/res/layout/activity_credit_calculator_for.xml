@@ -50,7 +50,7 @@
         android:paddingLeft="@dimen/_5sdp"
         android:layout_marginLeft="@dimen/_17sdp"
         android:layout_marginTop="@dimen/_25sdp"
-        android:text="क्रेडिट के लिए आवश्यक है"></TextView>
+        android:text="कर्ज की जरुरत किस कार्य के लिए है"></TextView>
     <RelativeLayout
         android:id="@+id/et_distname"
         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
         android:background="@drawable/rectangle_rounded_green"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_30sdp"
-        android:text="अगला"
+        android:text="आगे बड़े"
         android:textSize="@dimen/_17sdp"
         android:layout_gravity="center_horizontal"
         ></Button>

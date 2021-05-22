@@ -12,6 +12,7 @@ import com.recam.databinding.ItemCategoryBinding
 import com.recam.model.HomeApiResponse
 import com.recam.screens.home.HomeActivity
 import com.recam.utils.OnitemClickInterface
+import kotlin.math.roundToInt
 
 class TopCategoryAdapter(
     val activity: HomeActivity,
@@ -38,6 +39,7 @@ class TopCategoryAdapter(
             .load(latestUpdate.get(position).video_url)
             .placeholder(R.drawable.ic_placeholder)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
+            .override(activity.resources.getDimension(R.dimen._150sdp).roundToInt(),activity.resources.getDimension(R.dimen._90sdp).roundToInt())
             .into(itemView!!.catImage);
 
         itemView!!.rlItemVideo.setOnClickListener {

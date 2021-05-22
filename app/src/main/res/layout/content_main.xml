@@ -83,11 +83,12 @@
             android:textSize="@dimen/_16sdp"
             android:text="@string/its_easy"></TextView>-->
         <Button
+            android:id="@+id/loan"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_45sdp"
             android:background="@drawable/rectangle_rounded_green"
             android:layout_marginTop="@dimen/_12sdp"
-            android:text="@string/credit_planning"
+            android:text="लोन के लिए"
             android:textSize="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_20sdp"></Button>
 

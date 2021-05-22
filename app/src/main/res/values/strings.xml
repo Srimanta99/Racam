@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">RACAM</string>
-    <string name="home">हैम</string>
+    <string name="home">होम</string>
     <string name="lateast_update">नवीनतम अद्यतन</string>
     <string name="need_loan_for_farming">अपने खेती के लिए ऋण की आवश्यकता है?</string>
     <string name="its_easy">इसका आसान और 100% सुरक्षित है</string>

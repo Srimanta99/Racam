@@ -47,14 +47,16 @@
         android:layout_marginTop="@dimen/_25sdp"
         android:textSize="@dimen/_18sdp"
         android:text="कुल क्रेडिट की आवश्यकता"></TextView>
-    <TextView
+    <EditText
+        android:id="@+id/et_total"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:textSize="@dimen/_18sdp"
-        android:textColor="@color/black"
-        android:text="1,83,3233131"></TextView>
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:padding="@dimen/_7sdp"
+        android:inputType="number"
+        android:background="@drawable/rectangle_rounded_login"></EditText>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,13 +65,14 @@
         android:textSize="@dimen/_18sdp"
         android:text="आपका निवेश"></TextView>
     <EditText
-        android:id="@+id/et_land"
+        android:id="@+id/etyour"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_marginRight="@dimen/_20sdp"
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_7sdp"
         android:padding="@dimen/_7sdp"
+        android:inputType="number"
         android:background="@drawable/rectangle_rounded_login"></EditText>
 
     <Button

@@ -32,12 +32,15 @@ class CreditEmiCalculatorActivity : AppCompatActivity() {
     val loanIntervalDays: MutableList<String> = ArrayList()
     var customspiinnerinterest: CustomSpinnerInteresrRate?=null
     var customSpinnerInstallmentRate: CustomSpinnerInstallmentRate?=null
-    var seletedInterestrate=""
-    var selectedloanInterval=""
+    var seletedInterestrate:String=""
+    var selectedloanInterval:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityCreditEmiCalculatorBinding=ActivityCreditEmiCalculatorBinding.inflate(LayoutInflater.from(this))
         setContentView(activityCreditEmiCalculatorBinding!!.root)
+
+        activityCreditEmiCalculatorBinding!!.etYourinvesment.setText(intent.getStringExtra("yourinvestment"))
+        activityCreditEmiCalculatorBinding!!.etLoanrequired.setText(intent.getStringExtra("loanrequired"))
         loaninterest.add("अपना विकल्प चुनें")
         loaninterest.add("02%")
         loaninterest.add("03%")
@@ -52,6 +55,9 @@ class CreditEmiCalculatorActivity : AppCompatActivity() {
         activityCreditEmiCalculatorBinding!!.spinnerLoanIntrate.adapter=customspiinnerinterest
         activityCreditEmiCalculatorBinding!!.spinnerLoanIntrate.onItemSelectedListener=object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                if(p2==0)
+                    seletedInterestrate=""
+                else
                 seletedInterestrate=loaninterest.get(p2)
             }
 
@@ -69,6 +75,9 @@ class CreditEmiCalculatorActivity : AppCompatActivity() {
         activityCreditEmiCalculatorBinding!!.spinnerLoanInstalmnt.adapter=customSpinnerInstallmentRate
         activityCreditEmiCalculatorBinding!!.spinnerLoanInstalmnt.onItemSelectedListener=object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                if(p2==0)
+                    selectedloanInterval=""
+                 else
                 selectedloanInterval=loanIntervalDays.get(p2)
             }
 
@@ -79,12 +88,34 @@ class CreditEmiCalculatorActivity : AppCompatActivity() {
         }
 
         activityCreditEmiCalculatorBinding!!.btnNext.setOnClickListener {
-            callApifroEmi()
+            checkblank()
+
         }
         activityCreditEmiCalculatorBinding!!.imgBack.setOnClickListener {
             finish()
         }
 
+    }
+
+    private fun checkblank() {
+        if (activityCreditEmiCalculatorBinding!!.etLoanrequired.text.toString().equals("")){
+            Toast.makeText(this,"Loan required amount",Toast.LENGTH_LONG).show()
+            return
+        }
+        else if (activityCreditEmiCalculatorBinding!!.etTernatureyear.text.toString().equals("")){
+            Toast.makeText(this,"Loan year",Toast.LENGTH_LONG).show()
+            return
+        }
+       else if (seletedInterestrate.equals("")){
+            Toast.makeText(this,"Select Interest rate",Toast.LENGTH_LONG).show()
+            return
+        }
+        else if (selectedloanInterval.equals("")){
+            Toast.makeText(this,"Select loan interval in day",Toast.LENGTH_LONG).show()
+            return
+        }
+        else
+           callApifroEmi()
     }
 
     private fun callApifroEmi() {
@@ -108,6 +139,8 @@ class CreditEmiCalculatorActivity : AppCompatActivity() {
                         intent.putExtra(PreferenceConstent.year,response!!.body()!!.data.tenure)
                         intent.putExtra(PreferenceConstent.interestrate,response!!.body()!!.data.interest_rate)
                         intent.putExtra(PreferenceConstent.interval,response!!.body()!!.data.installment_interval)
+
+                        intent.putExtra(PreferenceConstent.yourinvesment,activityCreditEmiCalculatorBinding!!.etYourinvesment.text.toString())
                         startActivity(intent)
                     }
                     //else

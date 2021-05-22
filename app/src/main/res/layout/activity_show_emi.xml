@@ -45,10 +45,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_25sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
+
         android:text="ईएमआई"
         android:textColor="@color/black"
         android:textSize="@dimen/_16sdp"
@@ -57,20 +57,20 @@
         android:id="@+id/tv_emi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_5sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
+
         android:text="222"
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"></TextView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_25sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
+
         android:text="ब्याज दर"
         android:textColor="@color/black"
         android:textSize="@dimen/_16sdp"
@@ -79,10 +79,10 @@
         android:id="@+id/rateofinterest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_5sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
+
         android:text="2%"
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"></TextView>
@@ -90,11 +90,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_25sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
-        android:text="बकार्यकाल"
+
+        android:text="कार्यकाल"
         android:textColor="@color/black"
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"></TextView>
@@ -102,20 +102,20 @@
         android:id="@+id/tvyear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_5sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
+
         android:text="2 years"
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"></TextView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_25sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
+
         android:text="किस्त अंतराल"
         android:textColor="@color/black"
         android:textSize="@dimen/_16sdp"
@@ -124,10 +124,10 @@
         android:id="@+id/tvdays"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_17sdp"
+
         android:layout_marginTop="@dimen/_5sdp"
         android:gravity="center"
-        android:paddingLeft="@dimen/_5sdp"
+
         android:text="15 days"
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"></TextView>

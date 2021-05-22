@@ -71,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="@dimen/_7sdp"
+            android:inputType="number"
             android:background="@drawable/rectangle_rounded_login"></EditText>
     </RelativeLayout>
 

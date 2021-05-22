@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RECAM"
         android:usesCleartextTraffic="true">
-        <activity android:name=".screens.creditplanning.ShowEmiActivity"></activity>
+        <activity android:name=".screens.creditplanning.VagetableRequiredActivity"></activity>
+        <activity android:name=".screens.creditplanning.TotalLoanActivity" />
+        <activity android:name=".screens.creditplanning.ShowEmiActivity" />
         <activity android:name=".screens.creditplanning.CreditEmiCalculatorActivity" />
         <activity android:name=".screens.creditplanning.TotalCreditRequiredActivity" />
         <activity android:name=".screens.creditplanning.CreditLoanRequiredActivity" />

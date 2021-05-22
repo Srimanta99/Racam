@@ -15,6 +15,7 @@ import com.recam.model.CategoryVideoListResponse
 import com.recam.screens.categoryvideolist.CategoryVideoList
 import com.recam.screens.home.HomeActivity
 import com.recam.utils.OnitemClickInterface
+import kotlin.math.roundToInt
 
 class CategoryVideoListAdapter(
     val activity: CategoryVideoList,
@@ -42,6 +43,7 @@ class CategoryVideoListAdapter(
             .load(videolist.get(position).video_url)
             .placeholder(R.drawable.ic_placeholder)
             .apply(RequestOptions.bitmapTransform(RoundedCorners(10)))
+            .override(activity.resources.getDimension(R.dimen._150sdp).roundToInt(),activity.resources.getDimension(R.dimen._90sdp).roundToInt())
             .into(itemView!!.catImage);
 
        /* itemView!!.tvCreated.setTypeface(CustomTypeface.getRajdhaniMedium(activity!!))

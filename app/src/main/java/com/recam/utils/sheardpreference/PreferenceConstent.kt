@@ -37,5 +37,11 @@ object PreferenceConstent {
     val interestrate="interestrate"
     val year="year"
     val interval="interval"
+    val creditUserId="creditUserId"
+    val land="land"
+    val loanrequiredfor="requiredfor"
+    val yourinvesment="yourinvesment"
+    val landamount="amount"
+    val selectedVagetablecat="vagetablecat"
 
 }

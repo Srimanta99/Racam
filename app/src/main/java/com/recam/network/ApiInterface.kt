@@ -70,7 +70,11 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST(NetworkUtility.LOANUPDATE)
-    fun callApiloanUpdate(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<ResponseBody>
+    fun callApiloanUpdate(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<LoanApiUpdateResponse>
+
+    @FormUrlEncoded
+    @POST(NetworkUtility.LOANCATEGORY)
+    fun callloancategoryApivagetable(@Header("Authorization") header:String,@FieldMap  data:Map<String, String>):Call<VagetableApiResponse>
 
 
     /*@POST(NetworkUtility.LOGIN)

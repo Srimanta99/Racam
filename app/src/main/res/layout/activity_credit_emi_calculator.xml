@@ -50,7 +50,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="आपका निवेश"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"></TextView>
 
+        <EditText
+            android:id="@+id/et_yourinvesment"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:background="@drawable/rectangle_rounded_login"
+            android:hint="अपना चालान दर्ज करें "
+            android:inputType="number"
+            android:padding="@dimen/_7sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -63,7 +88,7 @@
         android:textSize="@dimen/_16sdp"
         android:textStyle="bold"></TextView>
 
-    <EditText
+    <TextView
         android:id="@+id/et_loanrequired"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
@@ -98,7 +123,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_15sdp"
         android:background="@drawable/rectangle_rounded_login"
-        android:hint="ब्याज दर का चयन करें"
+        android:hint="वर्ष दर्ज करेंं"
         android:inputType="numberDecimal"
         android:padding="@dimen/_7sdp"
         android:textColor="@color/black"

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_49sdp"
         android:textSize="@dimen/_15sdp"
-        android:paddingLeft="@dimen/_13sdp"
+        android:paddingLeft="@dimen/_8sdp"
         android:gravity="center_vertical"></TextView>
     <TextView
         android:layout_width="match_parent"

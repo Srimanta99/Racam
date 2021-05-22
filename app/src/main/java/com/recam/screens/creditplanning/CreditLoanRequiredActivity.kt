@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Toast
 import com.recam.R
 import com.recam.adapter.CustomSpinnerLoanRequired
 import com.recam.databinding.ActivityCreditLoanRequiredBinding
+import com.wecompli.utils.sheardpreference.AppSheardPreference
+import com.wecompli.utils.sheardpreference.PreferenceConstent
 
 class CreditLoanRequiredActivity : AppCompatActivity() {
     var activityCreditLoanRequiredBinding:ActivityCreditLoanRequiredBinding?=null
@@ -23,7 +26,12 @@ class CreditLoanRequiredActivity : AppCompatActivity() {
             finish()
         }
         activityCreditLoanRequiredBinding!!.btnNext.setOnClickListener {
-            startActivity(Intent(this, CreditEmiCalculatorActivity::class.java))
+            if (!loanrequiredStr.equals("")) {
+
+                AppSheardPreference(this).setvalue_in_preference(PreferenceConstent.loanrequiredfor,loanrequiredStr)
+                startActivity(Intent(this, CreditEmiCalculatorActivity::class.java))
+            }else
+                Toast.makeText(this,"Select loan required for",Toast.LENGTH_LONG).show()
 
         }
         loanRequired.add("अपना विकल्प चुनें")
