@@ -12,6 +12,7 @@ import com.recam.model.OtpResponse
 import com.recam.screens.home.HomeActivity
 import com.recam.screens.otp.OtpActivity
 import com.recam.screens.registration.RegistrationActivity
+import com.recam.utils.Utils
 import com.sculptee.utils.customprogress.CustomProgressDialog
 import com.wecompli.network.ApiInterface
 import com.wecompli.network.Retrofit
@@ -32,7 +33,10 @@ class LoginActivity : AppCompatActivity() {
          //   startActivity(Intent(this,OtpActivity::class.java))
           //  finish()
             if (!loginBinding!!.etPhonenumber.text.toString().equals("")){
-                callAPiforOtp()
+                if(Utils.isNetworkConnected(this))
+                   callAPiforOtp()
+                else
+                    Toast.makeText(this,"No Internet connection",Toast.LENGTH_LONG).show()
             }else
                 Toast.makeText(this,"कृपया फ़ोन नंबर दर्ज करें",Toast.LENGTH_LONG).show()
         }

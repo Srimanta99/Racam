@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import com.recam.R
 import com.recam.databinding.ActivityTotalCreditRequiredBinding
+import com.wecompli.utils.sheardpreference.AppSheardPreference
 
 class TotalCreditRequiredActivity : AppCompatActivity() {
     var activityTotalCreditRequiredBinding:ActivityTotalCreditRequiredBinding?=null
@@ -22,8 +23,11 @@ class TotalCreditRequiredActivity : AppCompatActivity() {
                    val totalCredit=(activityTotalCreditRequiredBinding!!.etTotal.text.toString()).toInt()
                    val yourinvestment=(activityTotalCreditRequiredBinding!!.etyour.text.toString()).toInt()
 
+                   AppSheardPreference(this).setvalue_in_preference("total_credit",activityTotalCreditRequiredBinding!!.etTotal.text.toString())
+                 //    intent.putExtra("total_credit",activityTotalCreditRequiredBinding!!.etTotal.text.toString())
                     intent.putExtra("yourinvestment",activityTotalCreditRequiredBinding!!.etyour.text.toString())
                      intent.putExtra("loanrequired",(totalCredit-yourinvestment).toString())
+                   AppSheardPreference(this).setvalue_in_preference("loanrequired",(totalCredit-yourinvestment).toString())
                    startActivity(intent)
                }
                else

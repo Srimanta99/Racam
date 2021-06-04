@@ -52,7 +52,6 @@
         android:layout_marginTop="@dimen/_25sdp"
         android:text="कके लिए ऋण आवश्यक है"></TextView>
     <RelativeLayout
-        android:id="@+id/et_distname"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
         android:textSize="@dimen/_16sdp"

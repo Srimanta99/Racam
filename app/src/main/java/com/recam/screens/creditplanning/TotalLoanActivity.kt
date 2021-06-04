@@ -26,6 +26,8 @@ class TotalLoanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         acCreditVagetableActivity= ActivityCreditVagetableBinding.inflate(LayoutInflater.from(this))
         setContentView(acCreditVagetableActivity!!.root)
+        if (!intent.getStringExtra("cost_hector").equals(""))
+              acCreditVagetableActivity!!.etTotalcredit.setText(intent.getStringExtra("cost_hector"))
         acCreditVagetableActivity!!.btnNext.setOnClickListener {
             checkvalidation();
         }

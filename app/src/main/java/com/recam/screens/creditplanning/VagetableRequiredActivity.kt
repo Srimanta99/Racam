@@ -41,6 +41,7 @@ class VagetableRequiredActivity : AppCompatActivity() {
     var own:Int?=0
     var high_eylid:Int?=0
     var others:Int?=0
+    var selectedamounts=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,6 +74,7 @@ class VagetableRequiredActivity : AppCompatActivity() {
             if(checkvalidation()!!){
                 selectedcattolat=feildprepration!!+nurserplanning!!+wedding!!+plantpotection!!+fertilizer!!+wages!!+others!!+own!!+hybrid!!+high_eylid!!
                 val intent=Intent(this,TotalCreditRequiredActivity::class.java)
+                AppSheardPreference(this).setvalue_in_preference(PreferenceConstent.selectedVagetable,selectedamounts)
                 intent.putExtra("loanamount",selectedcattolat.toString())
                 startActivity(intent)
             }else
@@ -102,44 +104,54 @@ class VagetableRequiredActivity : AppCompatActivity() {
         if (vagetableRequiredBinding!!.feildprepration.isChecked){
             selectvegcategory=true
             feildprepration = selectedvagetable!!.Field_Preparation.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.Field_Preparation
 
         }
         if (vagetableRequiredBinding!!.nurseryandplanting.isChecked){
             selectvegcategory=true
             nurserplanning = selectedvagetable!!.Nursery_and_Planting.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.Nursery_and_Planting
         }
          if (vagetableRequiredBinding!!.wedding.isChecked){
-            selectvegcategory=true
-            wedding=selectedvagetable!!.Weeding.toInt()
+             selectvegcategory=true
+             wedding=selectedvagetable!!.Weeding.toInt()
+             selectedamounts=selectedamounts+","+ selectedvagetable!!.Weeding
         }
         if (vagetableRequiredBinding!!.plantpotection.isChecked){
             selectvegcategory=true
             plantpotection=selectedvagetable!!.Plant_Protection.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.Plant_Protection
         }
         if (vagetableRequiredBinding!!.fertilizer.isChecked){
             selectvegcategory=true
             fertilizer=selectedvagetable!!.Fertilizers.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.Plant_Protection
         }
         if (vagetableRequiredBinding!!.wages.isChecked){
             selectvegcategory=true
             wages=selectedvagetable!!.Wages.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.Wages
         }
         if (vagetableRequiredBinding!!.own.isChecked){
             selectvegcategory=true
             own=selectedvagetable!!.Own.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.Own
         }
         if (vagetableRequiredBinding!!.hybrid.isChecked){
             selectvegcategory=true
             hybrid=selectedvagetable!!.Hybrid.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.Hybrid
         }
         if (vagetableRequiredBinding!!.highyelid.isChecked){
             selectvegcategory=true
             high_eylid=selectedvagetable!!.High_Yield.toInt()
+            selectedamounts=selectedamounts+","+ selectedvagetable!!.High_Yield
         }
 
          if (vagetableRequiredBinding!!.others.isChecked){
             selectvegcategory=true
             others=selectedvagetable!!.Storage_transport_Others.toInt()
+             selectedamounts=selectedamounts+","+ selectedvagetable!!.Storage_transport_Others
         }
         return selectvegcategory
     }

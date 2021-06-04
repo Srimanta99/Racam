@@ -10,6 +10,7 @@ import com.recam.databinding.ActivityRegistrationBinding
 import com.recam.model.RegistrationResponseModel
 import com.recam.screens.login.LoginActivity
 import com.recam.screens.otp.OtpActivity
+import com.recam.utils.Utils
 import com.sculptee.utils.customprogress.CustomProgressDialog
 import com.wecompli.network.ApiInterface
 import com.wecompli.network.Retrofit
@@ -35,7 +36,9 @@ class RegistrationActivity : AppCompatActivity() {
             finish()*/
             if (!activityRegistrationBinding!!.etName.text.toString().equals("")){
                 if (!activityRegistrationBinding!!.etPnumber.text.toString().equals("")){
-                    callApiforReg()
+                    if(Utils.isNetworkConnected(this))
+                       callApiforReg()
+                    Toast.makeText(this,"No Internet connection",Toast.LENGTH_LONG).show()
                 }else
                     Toast.makeText(this,"कृपया फ़ोन नंबर दर्ज करें", Toast.LENGTH_LONG).show()
             }else

@@ -10,6 +10,7 @@ import com.recam.databinding.ActivityOtpBinding
 import com.recam.model.LoginResponse
 import com.recam.model.RegistrationResponseModel
 import com.recam.screens.home.HomeActivity
+import com.recam.utils.Utils
 import com.sculptee.utils.customprogress.CustomProgressDialog
 import com.wecompli.network.ApiInterface
 import com.wecompli.network.Retrofit
@@ -32,7 +33,10 @@ class OtpActivity : AppCompatActivity() {
            // startActivity(Intent(this,HomeActivity::class.java))
           //  finish()
             if(!activityOtpBinding!!.etOtpNo.text.toString().equals("")){
+                if(Utils.isNetworkConnected(this))
                callLoginApi()
+                else
+                Toast.makeText(this,"No Internet connection",Toast.LENGTH_LONG).show()
             }
             else
                 Toast.makeText(this,"कृपया ओटीपी दर्ज करें", Toast.LENGTH_LONG).show()

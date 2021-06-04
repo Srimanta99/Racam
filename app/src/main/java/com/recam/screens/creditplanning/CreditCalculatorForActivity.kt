@@ -31,6 +31,7 @@ class CreditCalculatorForActivity : AppCompatActivity() {
     var pagecount:Int=1
     var vagetable=0
     var Orchard=0
+    var cost_per_hector=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityCreditCalculatorForBinding= ActivityCreditCalculatorForBinding.inflate(LayoutInflater.from(this))
@@ -40,6 +41,8 @@ class CreditCalculatorForActivity : AppCompatActivity() {
                 if (p2>0) {
                     cat_id = loancatList!!.get(p2).id.toString()
                     parent_cat_id=loancatList!!.get(p2).category_parent.toString()
+                    if (Orchard==1)
+                    cost_per_hector=loancatList!!.get(p2).cost_per_hectare
                 }
 
               //  callLoanCategoryApi(cat_id)
@@ -51,7 +54,7 @@ class CreditCalculatorForActivity : AppCompatActivity() {
 
         }
         callLoanCategoryApi(cat_id)
-        loanData= LoanCategoryApiResponse.LoanData(0,"","अपना विकल्प चुनें",0)
+        loanData= LoanCategoryApiResponse.LoanData(0,"","अपना विकल्प चुनें",0,"")
         loancatList!!.add(loanData!!)
         customSpinnerAdapter= CustomSpinnerAdapterLoanCategory(this@CreditCalculatorForActivity,R.layout.item_credit,loancatList!!)
         activityCreditCalculatorForBinding!!.spinnerLoadCat.adapter=customSpinnerAdapter;
@@ -65,7 +68,12 @@ class CreditCalculatorForActivity : AppCompatActivity() {
        }
 
         activityCreditCalculatorForBinding!!.btnNext.setOnClickListener {
-            if (!cat_id.equals("0")) {
+            if(Orchard==1){
+                val intent=Intent(this,TotalLoanActivity::class.java)
+                intent.putExtra("cost_hector",cost_per_hector)
+                startActivity(intent)
+            }
+           else if (!cat_id.equals("0")) {
                 pagecount++
                 callLoanCategoryApi(cat_id)
             }else if(vagetable==1){
@@ -88,28 +96,53 @@ class CreditCalculatorForActivity : AppCompatActivity() {
             override fun onResponse(call: Call<LoanCategoryApiResponse>, response: Response<LoanCategoryApiResponse>) {
                 customProgress.hideProgress()
                 if (response.isSuccessful) {
-                    if (response.body()!!.status == 200) {
-                            vagetable=response.body()!!.Vegetable
-                            Orchard=response.body()!!.Orchard
-                        if(vagetable==1 || vagetable==1){
-                            AppSheardPreference(this@CreditCalculatorForActivity).setvalue_in_preference(PreferenceConstent.selectedVagetablecat,cat_id)
-                            startActivity(Intent(this@CreditCalculatorForActivity, CreditCalculatorLandActivity::class.java))
-                        }else {
-                            loancatList!!.clear()
-                            loancatList!!.add(loanData!!)
-
-                            for (i in 0 until response!!.body()!!.data.size) {
-                                loancatList!!.add(response!!.body()!!.data.get(i))
+                    try {
+                        if (response.body()!!.status == 200) {
+                            vagetable = response.body()!!.Vegetable
+                            Orchard = response.body()!!.Orchard
+                            if (vagetable == 1) {
+                                AppSheardPreference(this@CreditCalculatorForActivity).setvalue_in_preference(
+                                    PreferenceConstent.selectedVagetablecat,
+                                    cat_id
+                                )
+                                startActivity(
+                                    Intent(
+                                        this@CreditCalculatorForActivity,
+                                        CreditCalculatorLandActivity::class.java
+                                    )
+                                )
+                            } else {
+                                loancatList!!.clear()
+                                loancatList!!.add(loanData!!)
+                                if (!response!!.body()!!.parentName.equals(""))
+                                    activityCreditCalculatorForBinding!!.tvParenttextname.setText(
+                                        response!!.body()!!.parentName
+                                    )
+                                for (i in 0 until response!!.body()!!.data.size) {
+                                    loancatList!!.add(response!!.body()!!.data.get(i))
+                                }
+                                customSpinnerAdapter = CustomSpinnerAdapterLoanCategory(
+                                    this@CreditCalculatorForActivity,
+                                    R.layout.item_credit,
+                                    loancatList!!
+                                )
+                                activityCreditCalculatorForBinding!!.spinnerLoadCat.adapter =
+                                    customSpinnerAdapter;
                             }
-                            customSpinnerAdapter = CustomSpinnerAdapterLoanCategory(this@CreditCalculatorForActivity, R.layout.item_credit, loancatList!!)
-                            activityCreditCalculatorForBinding!!.spinnerLoadCat.adapter = customSpinnerAdapter;
                         }
+                    }catch (e:Exception){
+                        e.printStackTrace()
                     }
                     //else
                        //Toast.makeText(this@CreditCalculatorForActivity, response!!.body()!!.message, Toast.LENGTH_LONG).show()
 
                 }else
-                  startActivity(Intent(this@CreditCalculatorForActivity,TotalLoanActivity::class.java))
+                {
+                    val intent=Intent(this@CreditCalculatorForActivity,TotalLoanActivity::class.java)
+                    intent.putExtra("cost_hector",cost_per_hector)
+                    startActivity(intent)
+                }
+                //  startActivity(Intent(this@CreditCalculatorForActivity,TotalLoanActivity::class.java))
                 //else
                     //Toast.makeText(this@CreditCalculatorForActivity, "Something wrong. Try later", Toast.LENGTH_LONG).show()
             }

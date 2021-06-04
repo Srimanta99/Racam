@@ -29,6 +29,7 @@ import com.recam.screens.profile.ProfileActivity
 import com.recam.screens.termcondition.TermConditionActivity
 import com.recam.screens.videoplayscreen.VideoPlayActivity
 import com.recam.utils.OnitemClickInterface
+import com.recam.utils.Utils
 import com.sculptee.utils.customprogress.CustomProgressDialog
 import com.wecompli.network.ApiInterface
 import com.wecompli.network.Retrofit
@@ -90,8 +91,12 @@ class HomeActivity : AppCompatActivity() {
 
        /* activityMainBinding!!.contentMain.recBottomcategory!!.setLayoutManager(LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         activityMainBinding!!.contentMain.recBottomcategory!!.adapter=topCategoryAdapter*/
-        callHomeApi()
-        callApiCategoris()
+        if(Utils.isNetworkConnected(this)) {
+            callHomeApi()
+            callApiCategoris()
+        } else
+            Toast.makeText(this,"No Internet connection",Toast.LENGTH_LONG).show()
+
     }
     private fun callApiCategoris() {
         var loginUserData: LoginResponse.LoginUserData?=AppSheardPreference(this).getUser(PreferenceConstent.userData)

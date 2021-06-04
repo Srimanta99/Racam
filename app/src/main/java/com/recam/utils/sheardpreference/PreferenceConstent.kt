@@ -43,5 +43,6 @@ object PreferenceConstent {
     val yourinvesment="yourinvesment"
     val landamount="amount"
     val selectedVagetablecat="vagetablecat"
+    val selectedVagetable="selectvagetable"
 
 }

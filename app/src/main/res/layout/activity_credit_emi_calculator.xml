@@ -168,7 +168,7 @@
         android:paddingLeft="@dimen/_5sdp"
         android:layout_marginLeft="@dimen/_17sdp"
         android:layout_marginTop="@dimen/_25sdp"
-        android:text="दिनों में किस्त अंतराल का चयन करें"></TextView>
+        android:text=" किस्त चुकाने का समय अंतराल"></TextView>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"

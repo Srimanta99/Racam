@@ -46,7 +46,7 @@ class ShowEmiActivity : AppCompatActivity() {
         var loginUserData: LoginResponse.LoginUserData?= AppSheardPreference(this).getUser(PreferenceConstent.userData)
         val map: HashMap<String, String> = HashMap()
         map.put("id",AppSheardPreference(this).getvalue_in_preference(PreferenceConstent.creditUserId))
-        map.put("first_name","")
+        /*map.put("first_name","")
         map.put("last_name","")
         map.put("phone_no","")
         map.put("district","")
@@ -56,12 +56,12 @@ class ShowEmiActivity : AppCompatActivity() {
         map.put("panchayat","")
         map.put("block","")
         map.put("SHG_name","")
-        map.put("LandHolding","")
+        map.put("LandHolding","")*/
         map.put("Holding_Area_in_Decimal",AppSheardPreference(this).getvalue_in_preference(PreferenceConstent.land))
-        map.put("credit_required_for",AppSheardPreference(this).getvalue_in_preference(PreferenceConstent.loanrequiredfor))
-        map.put("Total_Investment","")
+        map.put("credit_required_for",AppSheardPreference(this).getvalue_in_preference(PreferenceConstent.selectedVagetable))
+        map.put("Total_Investment",intent.getStringExtra(PreferenceConstent.yourinvesment).toString())
         map.put("Own_Investment",intent.getStringExtra(PreferenceConstent.yourinvesment).toString())
-        map.put("Credit_Required","")
+        map.put("Credit_Required",AppSheardPreference(this).getvalue_in_preference("loanrequired"))
         map.put("tenure",intent.getStringExtra(PreferenceConstent.year).toString())
         map.put("interest_rate",intent.getStringExtra(PreferenceConstent.interestrate).toString())
         map.put("installment_interval",intent.getStringExtra(PreferenceConstent.interval).toString())
@@ -76,6 +76,7 @@ class ShowEmiActivity : AppCompatActivity() {
                 customProgress.hideProgress()
                 if (response.isSuccessful) {
                      if (response.body()!!.status == 200) {
+                         AppSheardPreference(this@ShowEmiActivity).setvalue_in_preference(PreferenceConstent.selectedVagetable,"")
                          Alert.showalertToGoHomePage(this@ShowEmiActivity,response!!.body()!!.message)
                       }
                     //else

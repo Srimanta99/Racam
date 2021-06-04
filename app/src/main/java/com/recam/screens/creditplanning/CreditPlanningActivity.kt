@@ -17,6 +17,7 @@ import com.recam.databinding.ActivityCreditPlanningBinding
 import com.recam.model.DistrictApiresponseModel
 import com.recam.model.LoanRegisterApiResponse
 import com.recam.model.LoginResponse
+import com.recam.utils.Utils
 import com.sculptee.utils.customprogress.CustomProgressDialog
 import com.wecompli.network.ApiInterface
 import com.wecompli.network.Retrofit
@@ -86,9 +87,12 @@ class CreditPlanningActivity : AppCompatActivity() {
         }
 
         activityCreditPlanningBinding!!.btnNext.setOnClickListener {
-           // startActivity(Intent(this, CreditCalculatorForActivity::class.java))
+          // startActivity(Intent(this, CreditCalculatorForActivity::class.java))
           //  loanApplicationApi()
-           checkvalidation();
+            if(Utils.isNetworkConnected(this))
+               checkvalidation();
+                else
+               Toast.makeText(this,"No Internet connection",Toast.LENGTH_LONG).show()
         }
 
         activityCreditPlanningBinding!!.tvAge.setOnClickListener {
@@ -179,9 +183,7 @@ class CreditPlanningActivity : AppCompatActivity() {
     }
 
     private fun callApifordistrict() {
-       var loginUserData: LoginResponse.LoginUserData?= AppSheardPreference(this).getUser(
-           PreferenceConstent.userData
-       )
+       var loginUserData: LoginResponse.LoginUserData?= AppSheardPreference(this).getUser(PreferenceConstent.userData)
         val map: HashMap<String, String> = HashMap()
         val  customProgress: CustomProgressDialog = CustomProgressDialog().getInstance()
         customProgress.showProgress(this, "Please Wait..", false)
